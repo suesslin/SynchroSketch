@@ -16,9 +16,49 @@ class ViewController: UIViewController {
     @IBOutlet var drawView: DrawView!
 
     @IBAction func colorSelection(sender: AnyObject) {
-            let drawing: DrawView = drawView as! DrawView
+        let drawing: DrawView = drawView as! DrawView
+        let alert = UIAlertController(title: "Choose a color", message: nil, preferredStyle: .ActionSheet)
+        let red = UIAlertAction(title: "Red", style: .Default) { (action) in
             drawing.currentColor = UIColor.redColor()
             print("Change!")
+        }
+        let green = UIAlertAction(title: "Green", style: .Default) { (action) in
+            drawing.currentColor = UIColor.greenColor()
+            print("Change!")
+        }
+        let orange = UIAlertAction(title: "Orange", style: .Default) { (action) in
+            drawing.currentColor = UIColor.orangeColor()
+            print("Change!")
+        }
+        let purple = UIAlertAction(title: "Purple", style: .Default) { (action) in
+            drawing.currentColor = UIColor.purpleColor()
+            print("Change!")
+        }
+        let blue = UIAlertAction(title: "blue", style: .Default) { (action) in
+            drawing.currentColor = UIColor.blueColor()
+            print("Change!")
+        }
+        let brown = UIAlertAction(title: "Brown", style: .Default) { (action) in
+            drawing.currentColor = UIColor.brownColor()
+            print("Change!")
+        }
+        let yellow = UIAlertAction(title: "Yellow", style: .Default) { (action) in
+            drawing.currentColor = UIColor.yellowColor()
+            print("Change!")
+        }
+        
+        alert.addAction(red)
+        alert.addAction(green)
+        alert.addAction(orange)
+        alert.addAction(purple)
+        alert.addAction(blue)
+        alert.addAction(brown)
+        alert.addAction(yellow)
+        
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+        
     }
 
     override func viewDidLoad() {

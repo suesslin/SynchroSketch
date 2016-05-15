@@ -31,7 +31,6 @@ class DrawView: UIView {
             let upload = ref.childByAppendingPath("\(Int(lastPoint.x))\(Int(lastPoint.y))\(Int(movedPoint.x))\(Int(movedPoint.y))")
             
             upload.setValue(line.convertToAnyObject())
-            
             lines.append(line)
             
             lastPoint = movedPoint // So it starts from the last position

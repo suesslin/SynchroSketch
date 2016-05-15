@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aja-BM-UJi">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
-                                <state key="normal" title="Red"/>
+                                <rect key="frame" x="252" y="285" width="97" height="30"/>
+                                <state key="normal" title="Choose Collor"/>
                                 <connections>
                                     <action selector="colorSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qmi-Cl-v0Q"/>
                                 </connections>

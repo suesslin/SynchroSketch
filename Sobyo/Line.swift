@@ -34,7 +34,7 @@ class Line {
         key = snapshot.key
         startingPoint = CGPoint(x: snapshot.value["startingPointX"] as! Double, y: snapshot.value["startingPointY"] as! Double)
         endingPoint = CGPoint(x: snapshot.value["endingPointX"] as! Double, y: snapshot.value["endingPointY"] as! Double)
-        color = UIColor.blackColor()
+        color = UIColor(rgbaString: (snapshot.value["color"] as! String))!
         ref = snapshot.ref
     }
     
@@ -48,6 +48,7 @@ extension Line {
             "startingPointY": self.startingPoint.y,
             "endingPointX": self.endingPoint.x,
             "endingPointY": self.endingPoint.y,
+            "color": self.color.rgbaString()!
         ]
     }
     
