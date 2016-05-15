@@ -23,7 +23,7 @@ class DrawView: UIView {
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             var movedPoint = touch.locationInView(self)
-            lines.append(Line(start: lastPoint, end: movedPoint))
+            lines.append(Line(start: lastPoint, end: movedPoint, color: UIColor.blackColor()))
             lastPoint = movedPoint // So it starts from the last position
         }
         
@@ -31,16 +31,17 @@ class DrawView: UIView {
     }
     
     override func drawRect(rect: CGRect)  {
-        let context = UIGraphicsGetCurrentContext()
+        let con = UIGraphicsGetCurrentContext()
         
-        CGContextSetLineCap(context, CGLineCap.Round)
-        CGContextSetLineWidth(context, 3)
+        CGContextSetLineCap(con, CGLineCap.Round)
+        CGContextSetLineWidth(con, 3)
         
         for line in self.lines {
-            CGContextBeginPath(context)
-            CGContextMoveToPoint(context, line.startingPoint.x, line.startingPoint.y)
-            CGContextAddLineToPoint(context, line.endingPoint.x, line.endingPoint.y)
-            CGContextStrokePath(context)
+            CGContextBeginPath(con)
+            CGContextMoveToPoint(con, line.startingPoint.x, line.startingPoint.y)
+            CGContextAddLineToPoint(con, line.endingPoint.x, line.endingPoint.y)
+            CGContextSetStrokeColorWithColor(con, line.color.CGColor)
+            CGContextStrokePath(con)
         }
     }
     

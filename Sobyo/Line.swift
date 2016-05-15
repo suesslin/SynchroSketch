@@ -12,10 +12,12 @@ class Line {
     
     let startingPoint: CGPoint
     let endingPoint: CGPoint
+    var color: UIColor
     
-    init(start: CGPoint, end: CGPoint) {
+    init(start: CGPoint, end: CGPoint, color: UIColor) {
         startingPoint = start
         endingPoint = end
+        self.color = color
     }
     
 }
