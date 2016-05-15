@@ -150,7 +150,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>B3A3D6417E0155A3314F9D8E</string>
+				<string>8B9D421C356B0BDA34496F02</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -656,7 +656,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>71E6BF9656A3576D5E5EB6A2</string>
+				<string>DDAB1A779756FB036DAAA914</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -664,19 +664,6 @@
 			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>71E6BF9656A3576D5E5EB6A2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Sobyo.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>722DBB353B923934BF6FE952</key>
 		<dict>
@@ -693,6 +680,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>8B9D421C356B0BDA34496F02</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DDAB1A779756FB036DAAA914</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>912120C618309BD64DA39662</key>
 		<dict>
 			<key>children</key>
@@ -706,13 +700,6 @@
 			<string>Pods</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B3A3D6417E0155A3314F9D8E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>71E6BF9656A3576D5E5EB6A2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>B4E931A04486062B71F00865</key>
 		<dict>
@@ -743,6 +730,19 @@ fi
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
+		</dict>
+		<key>DDAB1A779756FB036DAAA914</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Sobyo.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>F0305775D618001E43ECEAA1</key>
 		<dict>

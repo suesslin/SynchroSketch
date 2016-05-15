@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
+    
+    let ref = Firebase(url: "sobyo.firebaseio.com")
     
     @IBOutlet var drawView: DrawView!
 
@@ -20,7 +23,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        ref.observeEventType(.Value, withBlock: { (snapshot) in
+            var newLines = [Line]()
+            
+            for line in snapshot.children {
+                let line = Line(snapshot: line as! FDataSnapshot)
+                newLines.append(line)
+            }
+            
+            let drawing: DrawView = self.drawView as! DrawView
+            drawing.lines = newLines
+            debugPrint(drawing.lines)
+            
+        })
 
 }
 
+}

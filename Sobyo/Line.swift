@@ -7,17 +7,48 @@
 //
 
 import UIKit
+import Firebase
 
 class Line {
+    
+    var key: String
+    var ref: Firebase?
     
     let startingPoint: CGPoint
     let endingPoint: CGPoint
     var color: UIColor
     
-    init(start: CGPoint, end: CGPoint, color: UIColor) {
+    init(key: String, start: CGPoint, end: CGPoint, color: UIColor) {
+        
+        self.key = key
+        self.ref = nil
+        
         startingPoint = start
         endingPoint = end
         self.color = color
+    }
+    
+    init(snapshot: FDataSnapshot) {
+        print(snapshot.value)
+        print(snapshot.key)
+        key = snapshot.key
+        startingPoint = CGPoint(x: snapshot.value["startingPointX"] as! Double, y: snapshot.value["startingPointY"] as! Double)
+        endingPoint = CGPoint(x: snapshot.value["endingPointX"] as! Double, y: snapshot.value["endingPointY"] as! Double)
+        color = UIColor.blackColor()
+        ref = snapshot.ref
+    }
+    
+}
+
+extension Line {
+    
+    func convertToAnyObject() -> AnyObject {
+        return [
+            "startingPointX": self.startingPoint.x,
+            "startingPointY": self.startingPoint.y,
+            "endingPointX": self.endingPoint.x,
+            "endingPointY": self.endingPoint.y,
+        ]
     }
     
 }
