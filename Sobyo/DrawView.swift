@@ -30,17 +30,18 @@ class DrawView: UIView {
         self.setNeedsDisplay()
     }
     
-    override func drawRect(rect: CGRect) {
-        let con = UIGraphicsGetCurrentContext()
-        CGContextBeginPath(con)
+    override func drawRect(rect: CGRect)  {
+        let context = UIGraphicsGetCurrentContext()
         
-        for line in lines {
-            CGContextMoveToPoint(con, line.startingPoint.x, line.endingPoint.y)
-            CGContextAddLineToPoint(con, line.endingPoint.y, line.startingPoint.x)
-            CGContextSetRGBStrokeColor(con, 0, 0, 0, 1.0)
-            CGContextStrokePath(con)
+        CGContextSetLineCap(context, CGLineCap.Round)
+        CGContextSetLineWidth(context, 3)
+        
+        for line in self.lines {
+            CGContextBeginPath(context)
+            CGContextMoveToPoint(context, line.startingPoint.x, line.startingPoint.y)
+            CGContextAddLineToPoint(context, line.endingPoint.x, line.endingPoint.y)
+            CGContextStrokePath(context)
         }
-        
     }
     
     
