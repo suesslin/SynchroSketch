@@ -9,6 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var drawView: DrawView!
+
+    @IBAction func colorSelection(sender: AnyObject) {
+            let drawing: DrawView = drawView as! DrawView
+            drawing.currentColor = UIColor.redColor()
+            print("Change!")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,8 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="DrawView" customModule="Sobyo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aja-BM-UJi">
+                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="colorSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qmi-Cl-v0Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aja-BM-UJi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fNN-Np-2fB"/>
+                            <constraint firstItem="Aja-BM-UJi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iCf-qS-pDr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drawView" destination="8bC-Xf-vdC" id="uoL-eb-1Ul"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

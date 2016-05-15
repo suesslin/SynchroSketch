@@ -10,6 +10,7 @@ import UIKit
 
 class DrawView: UIView {
     
+    var currentColor = UIColor.blackColor()
     var lines: [Line] = []
     
     var lastPoint: CGPoint!
@@ -23,7 +24,7 @@ class DrawView: UIView {
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             var movedPoint = touch.locationInView(self)
-            lines.append(Line(start: lastPoint, end: movedPoint, color: UIColor.blackColor()))
+            lines.append(Line(start: lastPoint, end: movedPoint, color: currentColor))
             lastPoint = movedPoint // So it starts from the last position
         }
         
